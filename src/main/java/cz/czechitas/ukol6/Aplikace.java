@@ -41,14 +41,14 @@ public class Aplikace extends JFrame {
         setMinimumSize(new Dimension(250, 200));
 
 
-        husyField = new JSpinner();
+        husyField = new JSpinner(new SpinnerNumberModel(0, 0, 150, 1));
         husyLabel = new JLabel("Husy");
         husyLabel.setDisplayedMnemonic('H');
         husyLabel.setLabelFor(husyField);
         add(husyLabel);
         add(husyField);
 
-        kraliciField = new JSpinner();
+        kraliciField = new JSpinner(new SpinnerNumberModel(0, 0, 150, 1));
         kraliciLabel = new JLabel("Králíci");
         kraliciLabel.setDisplayedMnemonic('K');
         kraliciLabel.setLabelFor(kraliciField);
