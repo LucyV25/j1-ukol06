@@ -41,7 +41,6 @@ public class Aplikace extends JFrame {
         setMinimumSize(new Dimension(250, 200));
 
 
-        //TODO implementovat formulář podle zadání
         husyField = new JSpinner();
         husyLabel = new JLabel("Husy");
         husyLabel.setDisplayedMnemonic('H');
@@ -77,6 +76,7 @@ public class Aplikace extends JFrame {
         add(pocetNohouField);
 
         pack();
+
         vypocitatButton.addActionListener(this::handleVypocitat);
     }
 
@@ -84,24 +84,22 @@ public class Aplikace extends JFrame {
         vypocitatButton = new JButton("Vypočítat");
         vypocitatButton.setMnemonic('V');
 
-
         JPanel buttonBar = new JPanel(new MigLayout(null, "[right, grow]"));
         buttonBar.add(vypocitatButton);
 
         return buttonBar;
     }
+
     private void handleVypocitat(ActionEvent actionEvent) {
         int kralici = (Integer) kraliciField.getValue();
         int husy = (Integer) husyField.getValue();
-        System.out.println("Pocet kraliku"+kralici);
-        int pocetHlavCislo = kralici+husy;
+
+        int pocetHlavCislo = kralici + husy;
         String pocetHlav = Integer.toString(pocetHlavCislo);
         pocetHlavField.setText(pocetHlav);
 
-        int pocetNohouCislo = (kralici*4)+(husy*2);
+        int pocetNohouCislo = (kralici * 4) + (husy * 2);
         String pocetNohou = Integer.toString(pocetNohouCislo);
         pocetNohouField.setText(pocetNohou);
-
-
     }
 }
